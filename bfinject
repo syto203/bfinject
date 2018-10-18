@@ -149,6 +149,16 @@ elif [ -f /jb/usr/local/bin/jtool ]; then
     echo "[+] Liberios detected"
     JTOOL=jtool
     INJECTOR=`pwd`/bfinject4realz
+elif [ -f /jb/spawn ]; then
+    # This is unc0ver
+    echo "[+] Unc0ver detected"
+    mkdir -p /jb/usr/local/bin
+    cp jtool.liberios /jb/usr/local/bin/
+    chmod +x /jb/usr/local/bin/jtool.liberios
+    JTOOL=/jb/usr/local/bin/jtool.liberios
+    cp bfinject4realz /jb/usr/local/bin/
+    INJECTOR=/jb/usr/local/bin/bfinject4realz
+
 else
     echo "[!] Unknown jailbreak. Aborting."
     exit 1
